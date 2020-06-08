@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "318514133139",
+    "firebase_url": "https://comandasapp-92ce0.firebaseio.com",
+    "project_id": "comandasapp-92ce0",
+    "storage_bucket": "comandasapp-92ce0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:318514133139:android:c4ecd7751de3d5e8027566",
+        "android_client_info": {
+          "package_name": "com.example.comandasapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "318514133139-1tecuqobjkdevtq0v4hgpsn6dbe1ssft.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.comandasapp",
+            "certificate_hash": "d1828ad8da52d008791b6d072f3c2a5207c67d7c"
+          }
+        },
+        {
+          "client_id": "318514133139-9fial80spta9b95rh1c7vm7g23nv3fsl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDa7tsKuZTYKb3B35A1AxS7KPRU1NAFAw4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "318514133139-9fial80spta9b95rh1c7vm7g23nv3fsl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

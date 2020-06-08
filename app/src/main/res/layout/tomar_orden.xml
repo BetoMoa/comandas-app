@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Platillo:"
+            android:textColor="#000"
+            android:textSize="16dp"
+            android:layout_margin="10dp"/>
+        <Spinner
+            android:id="@+id/spnPlatillo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cantidad:"
+            android:textColor="#000"
+            android:textSize="16dp"
+            android:layout_margin="10dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnMenosPlatillo"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:text="-"/>
+            <TextView
+                android:id="@+id/cantidadPlatillos"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="0"
+                android:gravity="center"/>
+            <Button
+                android:id="@+id/btnMasPlatillo"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:text="+"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bebida:"
+            android:textColor="#000"
+            android:textSize="16dp"
+            android:layout_margin="10dp"/>
+        <Spinner
+            android:id="@+id/spnBebida"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cantidad:"
+            android:textColor="#000"
+            android:textSize="16dp"
+            android:layout_margin="10dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnMenosBebida"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:text="-"/>
+            <TextView
+                android:id="@+id/cantidadBebidas"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="0"
+                android:gravity="center"/>
+            <Button
+                android:id="@+id/btnMasBebida"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:text="+"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mesa:"
+            android:textColor="#000"
+            android:textSize="16dp"
+            android:layout_margin="10dp"/>
+        <EditText
+            android:id="@+id/mesa"
+            android:layout_width="42dp"
+            android:layout_height="50dp"
+            android:inputType="number"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

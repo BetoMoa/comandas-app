@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".reestablecer_contrasena">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reestablecer contraseña"
+        android:textSize="28dp"/>
+
+    <EditText
+        android:id="@+id/edtCorreo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingresa tu correo"/>
+    <Button
+        android:id="@+id/resPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reestablecer"
+        android:background="#74737c"
+        android:textColor="#fff"/>
+
+</LinearLayout>

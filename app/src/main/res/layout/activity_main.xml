@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/login_fondo">
+
+    <LinearLayout
+        android:id="@+id/fila1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:layout_centerInParent="true">
+        <TextView
+            android:id="@+id/lblUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Usuario:"
+            android:textColor="#fff"
+            android:textSize="24dp"/>
+        <EditText
+            android:id="@+id/txUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingresa tu usuario"
+            android:textColorHint="#fff"
+            android:textColor="#fff"
+            android:drawableLeft="@drawable/icon_email"/>
+
+        <TextView
+            android:id="@+id/lblPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Contraseña:"
+            android:textColor="#fff"
+            android:textSize="24dp" />
+        <EditText
+            android:id="@+id/txPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingresa tu contraseña"
+            android:inputType="textPassword"
+            android:textColorHint="#fff"
+            android:textColor="#fff"
+            android:drawableLeft="@drawable/icon_lock"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fila1"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:gravity="center">
+        <Button
+            android:id="@+id/iniciar_sesion"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Iniciar sesión"
+            android:textColor="#fff"
+            android:background="@drawable/btn_login"/>
+        <Button
+            android:id="@+id/registrarse"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Registrarse"
+            android:textColor="#fff"
+            android:background="@drawable/btn_login"/>
+        <Button
+            android:id="@+id/recuperarPassword"
+            android:layout_width="185dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Olvide mi contraseña"
+            android:textColor="#fff"
+            android:background="@drawable/btn_login"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
