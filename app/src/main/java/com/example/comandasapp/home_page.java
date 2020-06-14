@@ -1,10 +1,12 @@
 package com.example.comandasapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
 import android.widget.TextView;
 
+import com.example.comandasapp.Pedidos.dialogTomarOrden;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -43,16 +45,16 @@ public class home_page extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                tomarOrden();
             }
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setItemIconTintList(null);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.pedidosFragment, R.id.platillos_fragment, R.id.bebidasFragment)
+                R.id.pedidosFragment, R.id.platillos_fragment, R.id.bebidasFragment, R.id.UsuarioFragment)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -74,25 +76,10 @@ public class home_page extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
-    private void obtenerInformacionUsuario(){
-        String id = mAuth.getCurrentUser().getUid();
-        mDB.child("usuarios").child(id).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot.exists())
-                {
-                    String nombre = dataSnapshot.child("nombre").getValue().toString();
-                    String email = dataSnapshot.child("email").getValue().toString();
 
-                    txtUsuario.setText(nombre);
-                    txtCorreo.setText(email);
-                }
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
+    private void tomarOrden(){
+        dialogTomarOrden tomar = new dialogTomarOrden();
+        tomar.show(this.getSupportFragmentManager(), "Tomar orden");
     }
 }

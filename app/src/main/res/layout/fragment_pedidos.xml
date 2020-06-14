@@ -12,36 +12,18 @@
         android:orientation="vertical"
         android:gravity="center">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tomar"/>
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ordenes listas"
+            android:text="Lista de ordenes"
             android:textSize="18dp"
             android:textColor="#000"
             android:layout_margin="10dp"/>
 
         <ListView
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:id="@+id/orden_lista"/>
-
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ordenes pendientes"
-                android:textSize="18dp"
-                android:textColor="#000"
-                android:layout_margin="10dp"/>
-
-        <ListView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/orden_pendiente"/>
+            android:layout_height="wrap_content"
+            android:id="@+id/orden_pendiente"/>
 
     </LinearLayout>
 

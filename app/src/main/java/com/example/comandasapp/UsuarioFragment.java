@@ -1,12 +1,16 @@
 package com.example.comandasapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -16,35 +20,54 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class home extends AppCompatActivity {
+/**
+ * A simple {@link Fragment} subclass.
+ * Use the {@link UsuarioFragment#newInstance} factory method to
+ * create an instance of this fragment.
+ */
+public class UsuarioFragment extends Fragment {
 
-    Button btnCerrarSesion;
     private FirebaseAuth mAuth;
-    private TextView txtUsuario, txtCorreo;
+    private TextView txtCorreo, txtUsuario;
     private DatabaseReference mDB;
+    private Button btnLogout, btnActualizar;
+
+    public UsuarioFragment() {
+        // Required empty public constructor
+    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
 
-        btnCerrarSesion = (Button) findViewById(R.id.cerrar_sesion);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View v = inflater.inflate(R.layout.fragment_usuario, container, false);
+
         mAuth = FirebaseAuth.getInstance();
         mDB = FirebaseDatabase.getInstance().getReference();
-        txtUsuario = (TextView) findViewById(R.id.nombre_usuario);
-        txtCorreo = (TextView) findViewById(R.id.email_usuario);
+        txtUsuario = (TextView) v.findViewById(R.id.user);
+        txtCorreo = (TextView) v.findViewById(R.id.correo);
+        btnLogout = (Button) v.findViewById(R.id.logout);
 
-        btnCerrarSesion.setOnClickListener(new View.OnClickListener() {
+        btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mAuth.signOut();
-                Intent intent = new Intent(home.this, MainActivity.class);
+                Intent intent = new Intent(getActivity(), MainActivity.class);
                 startActivity(intent);
-                finish();
+                getActivity().finish();
             }
         });
 
         obtenerInformacionUsuario();
+
+
+        return v;
     }
 
     private void obtenerInformacionUsuario(){

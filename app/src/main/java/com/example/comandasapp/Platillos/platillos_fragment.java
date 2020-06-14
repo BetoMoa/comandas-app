@@ -7,13 +7,17 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.comandasapp.R;
 import com.google.firebase.FirebaseApp;
@@ -44,6 +48,8 @@ public class platillos_fragment extends Fragment {
 
     platillo platilloSeleccionado;
 
+    private EditText txtBuscar;
+
     public platillos_fragment() {
         // Required empty public constructor
     }
@@ -57,6 +63,7 @@ public class platillos_fragment extends Fragment {
 
         lv_platillos = (ListView) main.findViewById(R.id.lv_platillos);
         btnAgregar = (Button) main.findViewById(R.id.btnAgregar_platillo);
+        txtBuscar = (EditText) main.findViewById(R.id.edtBuscarPlatillo);
 
         btnAgregar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,6 +89,23 @@ public class platillos_fragment extends Fragment {
                 i.putExtra("codigo_platillo", codigo_platillo);
                 i.putExtra("id_platillo", id_platillo);
                 startActivity(i);
+            }
+        });
+
+        txtBuscar.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                arrayAdapterPlatillo.getFilter().filter(s);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
             }
         });
 

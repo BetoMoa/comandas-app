@@ -6,12 +6,15 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import com.example.comandasapp.Platillos.actualizar_platillo;
@@ -38,6 +41,7 @@ public class bebidasFragment extends Fragment {
     private FirebaseDatabase fDB;
     private DatabaseReference rDB;
     private ListView lv_bebidas;
+    private EditText buscarBebida;
 
     private List<bebida> listaBebidas = new ArrayList<bebida>();
     ArrayAdapter<bebida> arrayAdapterBebida;
@@ -60,6 +64,7 @@ public class bebidasFragment extends Fragment {
 
         lv_bebidas = (ListView) main.findViewById(R.id.lv_bebidas);
         btnAgregar = (Button) main.findViewById(R.id.btnAgregar_bebida);
+        buscarBebida = (EditText) main.findViewById(R.id.edtBuscarBebida);
 
         btnAgregar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,6 +90,23 @@ public class bebidasFragment extends Fragment {
                 i.putExtra("codigo_bebida", codigo_bebida);
                 i.putExtra("id_bebida", id_bebida);
                 startActivity(i);
+            }
+        });
+
+        buscarBebida.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                arrayAdapterBebida.getFilter().filter(s);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
             }
         });
 

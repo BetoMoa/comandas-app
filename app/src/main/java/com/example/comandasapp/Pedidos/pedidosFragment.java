@@ -54,21 +54,11 @@ public class pedidosFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_pedidos, container, false);
 
-        btnTomar = v.findViewById(R.id.tomar);
-        lv_ordenesListas = (ListView) v.findViewById(R.id.orden_lista);
         lv_ordenesPendientes = (ListView) v.findViewById(R.id.orden_pendiente);
 
         iniciarFirebase();
 
         obtenerListaOrdenesPendientes();
-
-        btnTomar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialogTomarOrden DialogoBebida = new dialogTomarOrden();
-                DialogoBebida.show(getActivity().getSupportFragmentManager(), "Agregar bebida");
-            }
-        });
 
         return v;
     }
